@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>楽珠そろばん教室｜姫路エリアの無料体験会受付中</title>
+    <meta name="description" content="姫路エリアで人気の「楽珠そろばん教室」。年中〜小学生対象、週1回から通える少人数制。自律学習で計算力と集中力を育みます。無料体験会実施中。">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS (Design Framework) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome (Icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4A96AE',   /* New Brand Color - 指定色 */
+                        secondary: '#F59E0B', /* Amber - 活気・CV */
+                        accent: '#E0F2F7',    /* Pale Blue - 安心（Primaryに合わせて調整） */
+                        base: '#F7FBFA',      /* Off-white Mint - 背景 */
+                        text: '#374151',      /* Dark Gray - 本文 */
+                    },
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                        display: ['"Zen Kaku Gothic New"', 'sans-serif'],
+                        number: ['"Inter"', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 20px -2px rgba(74, 150, 174, 0.15)', /* Primary色に合わせた影 */
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles for smoothness and specifics */
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            color: #374151;
+            background-color: #F7FBFA;
+        }
+        .text-display {
+            font-family: 'Zen Kaku Gothic New', sans-serif;
+        }
+        .text-number {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Hero Gradient & New Image */
+        .hero-bg {
+            /* 勉強する子供の画像に差し替え & 透過度を調整して画像が見えるように変更 */
+            background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.5)), url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Accordion Transition */
+        .accordion-content {
+            transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        .accordion-content.active {
+            opacity: 1;
+        }
+
+        /* Shiny Button Effect */
+        .btn-shine {
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-shine::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+            transform: skewX(-25deg);
+            animation: shine 3s infinite;
+        }
+        @keyframes shine {
+            0% { left: -100%; }
+            20% { left: 200%; }
+            100% { left: 200%; }
+        }
+
+        /* Mobile Sticky Footer Padding */
+        .has-sticky-footer {
+            padding-bottom: 80px;
+        }
+    </style>
+</head>
+<body class="has-sticky-footer">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+            <h1 class="text-xl md:text-2xl font-bold text-primary flex items-center gap-2">
+                <i class="fa-solid fa-calculator"></i>
+                <span class="text-display">楽珠そろばん教室</span>
+                <span class="text-xs text-gray-500 font-normal mt-1 ml-1 hidden sm:inline-block">姫路エリア</span>
+            </h1>
+            <nav class="hidden md:flex gap-6 text-sm font-medium text-gray-600">
+                <a href="#features" class="hover:text-primary transition">特徴</a>
+                <a href="#flow" class="hover:text-primary transition">体験の流れ</a>
+                <a href="#faq" class="hover:text-primary transition">Q&A</a>
+                <a href="#classroom" class="hover:text-primary transition">教室一覧</a>
+            </nav>
+            <a href="https://forms.gle/9g4vqH3Quj4TLxc19" target="_blank" class="hidden md:flex bg-secondary hover:bg-yellow-500 text-white font-bold py-2 px-6 rounded-full transition shadow-md items-center gap-2">
+                無料体験へ <i class="fa-solid fa-chevron-right text-xs"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- FV (Hero) -->
+    <section class="hero-bg relative pt-12 pb-20 md:py-32 overflow-hidden">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10 grid md:grid-cols-2 gap-12 items-center">
+            
+            <!-- Text Content -->
+            <div class="space-y-6 text-center md:text-left">
+                <div class="inline-block bg-white/90 backdrop-blur-sm px-4 py-1 rounded-full border border-primary/20 shadow-sm mb-2">
+                    <span class="text-primary font-bold text-sm"><i class="fa-solid fa-location-dot mr-1"></i>姫路エリアに複数教室あり</span>
+                </div>
+                
+                <h2 class="text-3xl md:text-5xl font-bold text-gray-800 leading-tight text-display">
+                    一生役立つ<br>
+                    <span class="text-primary">「自信」</span>と<span class="text-primary">「集中力」</span>を、<br>
+                    そろばんで。
+                </h2>
+                
+                <p class="text-lg text-gray-600 leading-relaxed">
+                    週1回から通える少人数制。<br>
+                    「できた！」が増える、自律学習型そろばん教室『楽珠（らくたま）』
+                </p>
+
+                <!-- Badges -->
+                <div class="flex flex-wrap justify-center md:justify-start gap-3">
+                    <span class="bg-white/80 text-primary px-3 py-1 rounded-md text-sm font-bold border border-primary/20"><i class="fa-solid fa-check mr-1"></i>初めてでも安心</span>
+                    <span class="bg-white/80 text-primary px-3 py-1 rounded-md text-sm font-bold border border-primary/20"><i class="fa-solid fa-check mr-1"></i>振替制度あり</span>
+                    <span class="bg-white/80 text-primary px-3 py-1 rounded-md text-sm font-bold border border-primary/20"><i class="fa-solid fa-check mr-1"></i>検定でやる気UP</span>
+                </div>
+
+                <!-- CTA -->
+                <div class="pt-4">
+                    <a href="https://forms.gle/9g4vqH3Quj4TLxc19" target="_blank" class="btn-shine bg-secondary hover:bg-yellow-500 text-white text-lg md:text-xl font-bold py-4 px-8 rounded-full shadow-lg transition transform hover:-translate-y-1 inline-block w-full md:w-auto text-center">
+                        無料体験会に申し込む（30秒）
+                        <span class="block text-xs font-normal mt-1 opacity-90">無理な勧誘はありません・手ぶらでOK</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Image (Mobile Order First) -->
+            <div class="relative order-first md:order-last">
+                <div class="absolute -inset-4 bg-accent/50 rounded-full blur-2xl opacity-70 animate-pulse"></div>
+                <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="先生が優しく教える様子" class="relative rounded-3xl shadow-2xl border-4 border-white transform md:rotate-2 hover:rotate-0 transition duration-500 w-full object-cover h-64 md:h-auto">
+                
+                <!-- Floating Badge -->
+                <div class="absolute -bottom-6 -left-4 md:-left-8 bg-white p-4 rounded-xl shadow-lg border-l-4 border-secondary max-w-xs hidden sm:block">
+                    <p class="text-sm font-bold text-gray-700">年中・年長さんからスタート！</p>
+                    <div class="flex text-yellow-400 text-xs mt-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Empathy (Pain Points) -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-10">
+                <span class="text-primary font-bold tracking-widest text-sm uppercase">CHECK LIST</span>
+                <h3 class="text-2xl md:text-3xl font-bold mt-2 text-display">そろばん、まだ早いかな？<br class="md:hidden">こんなお悩みありませんか？</h3>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100 flex items-start gap-4">
+                    <div class="bg-gray-200 text-gray-500 w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-1"><i class="fa-solid fa-check"></i></div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-1">小学校の勉強についていけるか不安</h4>
+                        <p class="text-sm text-gray-500">算数嫌いになる前に基礎を固めたい…</p>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100 flex items-start gap-4">
+                    <div class="bg-gray-200 text-gray-500 w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-1"><i class="fa-solid fa-check"></i></div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-1">落ち着きがなく、座っていられるか心配</h4>
+                        <p class="text-sm text-gray-500">机に向かう習慣がまだない…</p>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100 flex items-start gap-4">
+                    <div class="bg-gray-200 text-gray-500 w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-1"><i class="fa-solid fa-check"></i></div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-1">数字に苦手意識を持ってほしくない</h4>
+                        <p class="text-sm text-gray-500">早いうちに「数」に慣れさせたい…</p>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100 flex items-start gap-4">
+                    <div class="bg-gray-200 text-gray-500 w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-1"><i class="fa-solid fa-check"></i></div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-1">他の習い事と両立できるか分からない</h4>
+                        <p class="text-sm text-gray-500">忙しいので通えるか心配…</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-10 text-center bg-accent/50 p-8 rounded-3xl">
+                <p class="text-lg md:text-xl font-bold text-primary leading-relaxed">
+                    大丈夫です。<br>
+                    楽珠そろばん教室に通うお子さまの多くが、<br>
+                    <span class="bg-white/80 px-1 rounded">「習い事デビュー」</span>や<span class="bg-white/80 px-1 rounded">「学習習慣の第一歩」</span>として<br class="md:hidden">スタートしています。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promise -->
+    <section class="py-20 bg-primary text-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-white opacity-5 rounded-full"></div>
+        <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-60 h-60 bg-white opacity-5 rounded-full"></div>
+        
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <h3 class="text-2xl md:text-4xl font-bold mb-6 text-display">楽珠が育てるのは、<br>「計算力」だけではありません。</h3>
+            <p class="text-lg leading-loose opacity-90 mb-8">
+                そろばんを通じた「計算力（認知能力）」の向上はもちろんですが、<br class="hidden md:inline">
+                私たちが最も大切にしているのは<strong>「非認知能力」の育成</strong>です。<br><br>
+                正しい姿勢で机に向かうこと。<br>
+                間違えても諦めずにやり直すこと。<br>
+                目標に向かってコツコツ努力すること。<br><br>
+                これらは、将来どんな勉強やスポーツをする上でも土台となる力です。<br>
+                楽珠では、先生が答えを教えるのではなく、<br class="hidden md:inline">
+                子どもたちが「自分で考え、学ぶ環境（自律学習）」を作ることで、<br>
+                自ら伸びようとする力を引き出します。
+            </p>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="py-20 bg-base">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-16">
+                <span class="text-secondary font-bold tracking-widest text-sm uppercase">FEATURES</span>
+                <h3 class="text-3xl font-bold mt-2 text-display">「週1回」でも成長できる。<br>楽珠が選ばれる5つの理由</h3>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- 1 -->
+                <div class="bg-white p-8 rounded-3xl shadow-soft hover:shadow-lg transition">
+                    <div class="w-14 h-14 bg-accent rounded-2xl flex items-center justify-center text-primary text-2xl mb-6">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">少人数個別指導</h4>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        一斉授業ではないので、周りについていけない心配はありません。幼児さんには指の使い方から丁寧に、進んでいる子はどんどん先へ。
+                    </p>
+                </div>
+
+                <!-- 2 -->
+                <div class="bg-white p-8 rounded-3xl shadow-soft hover:shadow-lg transition">
+                    <div class="w-14 h-14 bg-accent rounded-2xl flex items-center justify-center text-primary text-2xl mb-6">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">検定でやる気継続</h4>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        日計連・日珠連などの検定試験に挑戦できます。「受かった！」という成功体験の積み重ねが、大きな自信へと変わります。
+                    </p>
+                </div>
+
+                <!-- 3 -->
+                <div class="bg-white p-8 rounded-3xl shadow-soft hover:shadow-lg transition">
+                    <div class="w-14 h-14 bg-accent rounded-2xl flex items-center justify-center text-primary text-2xl mb-6">
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">安心の振替制度</h4>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        お子さまの急な発熱や学校行事でお休みしても、別の日へ振替が可能です。無理なく続けられる仕組みが整っています。
+                    </p>
+                </div>
+
+                <!-- 4 -->
+                <div class="bg-white p-8 rounded-3xl shadow-soft hover:shadow-lg transition">
+                    <div class="w-14 h-14 bg-accent rounded-2xl flex items-center justify-center text-primary text-2xl mb-6">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">心を育む「自他共栄」</h4>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        挨拶や靴を揃えるといった礼儀作法も指導。異学年の生徒と同じ空間で学ぶことで、互いに刺激し合い、高め合う心を育みます。
+                    </p>
+                </div>
+
+                <!-- 5 -->
+                <div class="bg-white p-8 rounded-3xl shadow-soft hover:shadow-lg transition md:col-span-2">
+                    <div class="w-14 h-14 bg-accent rounded-2xl flex items-center justify-center text-primary text-2xl mb-6">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <h4 class="text-xl font-bold mb-3">DX・特別授業でサポート</h4>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        動画教材を活用した予習・復習や、朝練・暗算講習などの特別授業（オンライン中心・無料）も充実。家庭学習の習慣化もサポートします。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Now -->
+    <section class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-4">
+            <h3 class="text-2xl md:text-3xl font-bold text-center mb-12 text-display">なぜ、年中〜小2の<span class="text-secondary border-b-4 border-secondary/30">「今」</span>がチャンスなのか</h3>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card -->
+                <div class="text-center">
+                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="脳の成長" class="w-full h-48 object-cover rounded-2xl mb-6 shadow-md">
+                    <h4 class="font-bold text-lg text-primary mb-2">ゴールデンエイジ</h4>
+                    <p class="text-sm text-gray-600">指先を使い脳を刺激するそろばんは、神経回路が急速に発達する幼児期〜低学年に最適です。</p>
+                </div>
+                <!-- Card -->
+                <div class="text-center">
+                    <img src="https://images.unsplash.com/photo-1632571401005-458e9d244591?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="数へのイメージ" class="w-full h-48 object-cover rounded-2xl mb-6 shadow-md">
+                    <h4 class="font-bold text-lg text-primary mb-2">「数」のイメージ定着</h4>
+                    <p class="text-sm text-gray-600">算数が本格的に難しくなる前に、量としての数の感覚（暗算力）を身につけ、苦手意識を防ぎます。</p>
+                </div>
+                <!-- Card -->
+                <div class="text-center">
+                    <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="学習姿勢" class="w-full h-48 object-cover rounded-2xl mb-6 shadow-md">
+                    <h4 class="font-bold text-lg text-primary mb-2">学習姿勢の確立</h4>
+                    <p class="text-sm text-gray-600">宿題が増える前に「机に向かって集中する時間」を習慣にすることで、自ら学ぶ姿勢が身につきます。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Points (Points to see) -->
+    <section class="py-20 bg-accent/30">
+        <div class="max-w-4xl mx-auto px-4">
+            <h3 class="text-2xl md:text-3xl font-bold text-center mb-10 text-display">無料体験で、<br class="md:hidden">お子さまの<span class="text-primary">「目の輝き」</span>を見てください</h3>
+            
+            <div class="bg-white rounded-3xl shadow-xl p-8 md:p-12 relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-2 h-full bg-secondary"></div>
+                <p class="mb-8 text-center">体験会では、そろばんの弾き方はもちろん、<br class="hidden md:inline">教室の雰囲気や先生との相性を確認していただけます。</p>
+
+                <ul class="space-y-6">
+                    <li class="flex items-start gap-4">
+                        <div class="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center font-bold flex-shrink-0">1</div>
+                        <div>
+                            <h5 class="font-bold text-lg">先生の関わり方</h5>
+                            <p class="text-sm text-gray-600">お子さまの良いところを見つけ、褒めて伸ばす指導を体感してください。</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center font-bold flex-shrink-0">2</div>
+                        <div>
+                            <h5 class="font-bold text-lg">集中できる環境</h5>
+                            <p class="text-sm text-gray-600">周りのお友達が真剣に取り組む姿を見て、自然と背筋が伸びる瞬間があります。</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="bg-primary text-white w-8 h-8 rounded-full flex items-center justify-center font-bold flex-shrink-0">3</div>
+                        <div>
+                            <h5 class="font-bold text-lg">「できた！」の笑顔</h5>
+                            <p class="text-sm text-gray-600">簡単な問題からスタートし、解けた時の喜びを一緒に分かち合います。</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flow -->
+    <section id="flow" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <h3 class="text-2xl md:text-3xl font-bold text-center mb-12 text-display">お申し込みは簡単3ステップ</h3>
+
+            <div class="grid md:grid-cols-3 gap-8 relative">
+                <!-- Connectors (Desktop only) -->
+                <div class="hidden md:block absolute top-8 left-1/3 w-1/3 h-1 bg-gray-200 -z-10"></div>
+                <div class="hidden md:block absolute top-8 left-2/3 w-1/3 h-1 bg-gray-200 -z-10"></div>
+
+                <!-- Step 1 -->
+                <div class="text-center bg-white">
+                    <div class="w-16 h-16 mx-auto bg-base border-2 border-primary text-primary rounded-full flex items-center justify-center text-xl font-bold mb-4">1</div>
+                    <h4 class="font-bold text-lg mb-2">Webから予約</h4>
+                    <p class="text-sm text-gray-600">フォームから簡単申し込み。<br>ご希望のエリアを選択して送信。</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="text-center bg-white">
+                    <div class="w-16 h-16 mx-auto bg-base border-2 border-primary text-primary rounded-full flex items-center justify-center text-xl font-bold mb-4">2</div>
+                    <h4 class="font-bold text-lg mb-2">教室案内・日程調整</h4>
+                    <p class="text-sm text-gray-600">姫路エリアの担当よりご連絡。<br>最寄りの教室をご案内します。</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="text-center bg-white">
+                    <div class="w-16 h-16 mx-auto bg-secondary text-white rounded-full flex items-center justify-center text-xl font-bold mb-4 shadow-lg">3</div>
+                    <h4 class="font-bold text-lg mb-2">手ぶらで体験！</h4>
+                    <p class="text-sm text-gray-600">教材は貸し出しいたします。<br>保護者さまもぜひご一緒に。</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="https://forms.gle/9g4vqH3Quj4TLxc19" target="_blank" class="btn-shine bg-secondary hover:bg-yellow-500 text-white font-bold py-4 px-10 rounded-full shadow-lg transition inline-block">
+                    まずは無料体験会へ <i class="fa-solid fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Voices -->
+    <section class="py-20 bg-base">
+        <div class="max-w-5xl mx-auto px-4">
+            <h3 class="text-2xl md:text-3xl font-bold text-center mb-12 text-display">保護者さまからの嬉しいお声</h3>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Voice 1 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 relative">
+                    <div class="absolute -top-3 left-6 text-4xl text-accent opacity-50"><i class="fa-solid fa-quote-left"></i></div>
+                    <p class="font-bold text-primary mb-3 mt-2">10分間集中できるように</p>
+                    <p class="text-sm text-gray-600 mb-4 leading-relaxed">
+                        最初は座っていられるか不安でしたが、先生が優しく、スモールステップで進めてくれるので、「できた！」と嬉しそうに報告してくれます。
+                    </p>
+                    <div class="flex items-center gap-3 border-t pt-3">
+                        <div class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center text-xs text-gray-500"><i class="fa-regular fa-user"></i></div>
+                        <span class="text-xs text-gray-500">小1 女の子の母</span>
+                    </div>
+                </div>
+
+                <!-- Voice 2 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 relative">
+                    <div class="absolute -top-3 left-6 text-4xl text-accent opacity-50"><i class="fa-solid fa-quote-left"></i></div>
+                    <p class="font-bold text-primary mb-3 mt-2">計算が得意になった</p>
+                    <p class="text-sm text-gray-600 mb-4 leading-relaxed">
+                        買い物に行くと合計金額を計算しようとしたり、遊び感覚で数字に親しめています。振替ができるので他の習い事と両立しやすいです。
+                    </p>
+                    <div class="flex items-center gap-3 border-t pt-3">
+                        <div class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center text-xs text-gray-500"><i class="fa-regular fa-user"></i></div>
+                        <span class="text-xs text-gray-500">年長 男の子の母</span>
+                    </div>
+                </div>
+
+                <!-- Voice 3 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 relative">
+                    <div class="absolute -top-3 left-6 text-4xl text-accent opacity-50"><i class="fa-solid fa-quote-left"></i></div>
+                    <p class="font-bold text-primary mb-3 mt-2">検定合格が自信に</p>
+                    <p class="text-sm text-gray-600 mb-4 leading-relaxed">
+                        合格するたびに「次はもっと上を！」と目標を持つようになりました。週1回でも着実に力がついているのを実感します。
+                    </p>
+                    <div class="flex items-center gap-3 border-t pt-3">
+                        <div class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center text-xs text-gray-500"><i class="fa-regular fa-user"></i></div>
+                        <span class="text-xs text-gray-500">小3 女の子の母</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-20 bg-white">
+        <div class="max-w-3xl mx-auto px-4">
+            <h3 class="text-2xl md:text-3xl font-bold text-center mb-10 text-display">よくある質問・費用について</h3>
+
+            <div class="space-y-4">
+                <!-- Item -->
+                <div class="border border-gray-200 rounded-xl overflow-hidden">
+                    <button class="w-full text-left p-5 bg-gray-50 hover:bg-gray-100 flex justify-between items-center font-bold focus:outline-none" onclick="toggleAccordion(this)">
+                        <span>Q. まだ数字が書けませんが、入会できますか？</span>
+                        <i class="fa-solid fa-chevron-down text-gray-400 transition-transform"></i>
+                    </button>
+                    <div class="accordion-content bg-white">
+                        <div class="p-5 text-sm text-gray-600 leading-relaxed border-t">
+                            A. はい、大丈夫です。数字の読み書きから丁寧に指導しますので、年中さんから安心してスタートしていただけます。
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item -->
+                <div class="border border-gray-200 rounded-xl overflow-hidden">
+                    <button class="w-full text-left p-5 bg-gray-50 hover:bg-gray-100 flex justify-between items-center font-bold focus:outline-none" onclick="toggleAccordion(this)">
+                        <span>Q. 姫路エリアのどの教室に通えばいいですか？</span>
+                        <i class="fa-solid fa-chevron-down text-gray-400 transition-transform"></i>
+                    </button>
+                    <div class="accordion-content bg-white">
+                        <div class="p-5 text-sm text-gray-600 leading-relaxed border-t">
+                            A. お申し込みフォームにご住所を入力いただければ、最寄りの通いやすい教室をご案内いたします。姫路市内全域・周辺エリアに対応しています。
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item -->
+                <div class="border border-gray-200 rounded-xl overflow-hidden">
+                    <button class="w-full text-left p-5 bg-gray-50 hover:bg-gray-100 flex justify-between items-center font-bold focus:outline-none" onclick="toggleAccordion(this)">
+                        <span>Q. 費用はどれくらいかかりますか？</span>
+                        <i class="fa-solid fa-chevron-down text-gray-400 transition-transform"></i>
+                    </button>
+                    <div class="accordion-content bg-white">
+                        <div class="p-5 text-sm text-gray-600 leading-relaxed border-t">
+                            A. コースや教室により異なりますが、目安は以下の通りです。<br><br>
+                            <ul class="list-disc pl-5 space-y-1">
+                                <li><strong>入会時：</strong>入会金 5,500円 / データ登録料 1,100円 / 初期教材費 3,300円</li>
+                                <li><strong>月謝例：</strong>週1コース 4,400円〜（事務教材費 550円/月 別途）</li>
+                            </ul>
+                            <br>※詳細な料金プランは、体験会にてご説明いたします。
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Item -->
+                 <div class="border border-gray-200 rounded-xl overflow-hidden">
+                    <button class="w-full text-left p-5 bg-gray-50 hover:bg-gray-100 flex justify-between items-center font-bold focus:outline-none" onclick="toggleAccordion(this)">
+                        <span>Q. オンラインでの受講も可能ですか？</span>
+                        <i class="fa-solid fa-chevron-down text-gray-400 transition-transform"></i>
+                    </button>
+                    <div class="accordion-content bg-white">
+                        <div class="p-5 text-sm text-gray-600 leading-relaxed border-t">
+                            A. はい、可能です。教室での対面指導を中心に、オンライン学習も併用可能です。ご家庭のライフスタイルに合わせてお選びいただけます。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Classroom List (Himeji Area) -->
+    <section id="classroom" class="py-20 bg-base">
+        <div class="max-w-6xl mx-auto px-4">
+            <h3 class="text-2xl md:text-3xl font-bold text-center mb-6 text-display">姫路エリアの教室一覧</h3>
+            <p class="text-center text-gray-600 mb-12">
+                現在、姫路エリアにて複数の教室を展開しています。<br>
+                まずはフォームよりご連絡ください。担当者が最適な教室をご案内します。
+            </p>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- 別所教室 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition border-l-4 border-primary">
+                    <h4 class="font-bold text-lg mb-2">別所教室</h4>
+                    <p class="text-xs text-gray-500 mb-3"><i class="fa-solid fa-map-pin mr-1"></i>姫路市別所町別所1620-7</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">火</span>
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">木</span>
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">金</span>
+                        <span class="text-xs text-primary font-bold pt-1 ml-1">16:00〜 / 17:00〜</span>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=兵庫県姫路市別所町別所1620-7" target="_blank" class="text-primary text-sm font-bold hover:underline"><i class="fa-solid fa-location-arrow mr-1"></i>地図を見る</a>
+                </div>
+
+                <!-- 広畑教室 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition border-l-4 border-primary">
+                    <h4 class="font-bold text-lg mb-2">広畑教室</h4>
+                    <p class="text-xs text-gray-500 mb-3"><i class="fa-solid fa-map-pin mr-1"></i>姫路市広畑区正門通1丁目7-3<br>（広畑市民センター内）</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">月</span>
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">木</span>
+                        <span class="text-xs text-primary font-bold pt-1 ml-1">16:00〜 / 17:00〜</span>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=兵庫県姫路市広畑区正門通1丁目7-3" target="_blank" class="text-primary text-sm font-bold hover:underline"><i class="fa-solid fa-location-arrow mr-1"></i>地図を見る</a>
+                </div>
+
+                <!-- 白浜教室 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition border-l-4 border-primary">
+                    <h4 class="font-bold text-lg mb-2">白浜教室</h4>
+                    <p class="text-xs text-gray-500 mb-3"><i class="fa-solid fa-map-pin mr-1"></i>姫路市白浜町宇佐崎中2-520<br>（灘市民センター内）</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">火</span>
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">金</span>
+                        <span class="text-xs text-primary font-bold pt-1 ml-1">16:00〜 / 17:00〜</span>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=兵庫県姫路市白浜町宇佐崎中2-520" target="_blank" class="text-primary text-sm font-bold hover:underline"><i class="fa-solid fa-location-arrow mr-1"></i>地図を見る</a>
+                </div>
+
+                <!-- 西飾磨教室 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition border-l-4 border-primary">
+                    <h4 class="font-bold text-lg mb-2">西飾磨教室</h4>
+                    <p class="text-xs text-gray-500 mb-3"><i class="fa-solid fa-map-pin mr-1"></i>姫路市飾磨区今在家4丁目23</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">月</span>
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">水</span>
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">金</span>
+                        <span class="text-xs text-primary font-bold pt-1 ml-1">16:00〜 / 17:00〜</span>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=兵庫県姫路市飾磨区今在家4丁目23" target="_blank" class="text-primary text-sm font-bold hover:underline"><i class="fa-solid fa-location-arrow mr-1"></i>地図を見る</a>
+                </div>
+
+                <!-- 英賀保教室 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition border-l-4 border-primary">
+                    <h4 class="font-bold text-lg mb-2">英賀保教室</h4>
+                    <p class="text-xs text-gray-500 mb-3"><i class="fa-solid fa-map-pin mr-1"></i>姫路市飾磨区英賀保駅前町53<br>英賀保駅前ビル2F</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">水</span>
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">金</span>
+                        <span class="text-xs text-primary font-bold pt-1 ml-1">16:00〜 / 17:00〜</span>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=兵庫県姫路市飾磨区英賀保駅前町53" target="_blank" class="text-primary text-sm font-bold hover:underline"><i class="fa-solid fa-location-arrow mr-1"></i>地図を見る</a>
+                </div>
+
+                <!-- 広峰教室 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition border-l-4 border-primary">
+                    <h4 class="font-bold text-lg mb-2">広峰教室</h4>
+                    <p class="text-xs text-gray-500 mb-3"><i class="fa-solid fa-map-pin mr-1"></i>姫路市広峰1-2-16<br>和田園ビル2F</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">火</span>
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">金</span>
+                        <span class="text-xs text-primary font-bold pt-1 ml-1">16:00〜 / 17:00〜</span>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=兵庫県姫路市広峰1-2-16" target="_blank" class="text-primary text-sm font-bold hover:underline"><i class="fa-solid fa-location-arrow mr-1"></i>地図を見る</a>
+                </div>
+
+                <!-- 糸引教室 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition border-l-4 border-primary">
+                    <h4 class="font-bold text-lg mb-2">糸引教室</h4>
+                    <p class="text-xs text-gray-500 mb-3"><i class="fa-solid fa-map-pin mr-1"></i>姫路市北原1125-1-C</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">月</span>
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">水</span>
+                        <span class="text-xs text-primary font-bold pt-1 ml-1">16:00〜 / 17:00〜</span>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=兵庫県姫路市北原1125-1" target="_blank" class="text-primary text-sm font-bold hover:underline"><i class="fa-solid fa-location-arrow mr-1"></i>地図を見る</a>
+                </div>
+
+                <!-- 八幡教室 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition border-l-4 border-primary">
+                    <h4 class="font-bold text-lg mb-2">八幡教室</h4>
+                    <p class="text-xs text-gray-500 mb-3"><i class="fa-solid fa-map-pin mr-1"></i>姫路市広畑区西夢前台5丁目236</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">月</span>
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">水</span>
+                        <span class="text-xs text-primary font-bold pt-1 ml-1">16:00〜 / 17:00〜</span>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=兵庫県姫路市広畑区西夢前台5丁目236" target="_blank" class="text-primary text-sm font-bold hover:underline"><i class="fa-solid fa-location-arrow mr-1"></i>地図を見る</a>
+                </div>
+
+                <!-- 手柄教室 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition border-l-4 border-primary">
+                    <h4 class="font-bold text-lg mb-2">手柄教室</h4>
+                    <p class="text-xs text-gray-500 mb-3"><i class="fa-solid fa-map-pin mr-1"></i>姫路市手柄1丁目93-2<br>ローズハイ1棟203号</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">水</span>
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">金</span>
+                        <span class="text-xs text-primary font-bold pt-1 ml-1">16:00〜 / 17:00〜</span>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=兵庫県姫路市手柄1丁目93-2" target="_blank" class="text-primary text-sm font-bold hover:underline"><i class="fa-solid fa-location-arrow mr-1"></i>地図を見る</a>
+                </div>
+
+                <!-- 青山教室 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition border-l-4 border-primary">
+                    <h4 class="font-bold text-lg mb-2">青山教室</h4>
+                    <p class="text-xs text-gray-500 mb-3"><i class="fa-solid fa-map-pin mr-1"></i>姫路市青山北3丁目4-10<br>（にじいろサロン内）</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">月</span>
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">水</span>
+                        <span class="text-xs text-primary font-bold pt-1 ml-1">16:00〜 / 17:00〜</span>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=兵庫県姫路市青山北3丁目4-10" target="_blank" class="text-primary text-sm font-bold hover:underline"><i class="fa-solid fa-location-arrow mr-1"></i>地図を見る</a>
+                </div>
+
+                <!-- 夢前教室 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition border-l-4 border-primary">
+                    <h4 class="font-bold text-lg mb-2">夢前教室</h4>
+                    <p class="text-xs text-gray-500 mb-3"><i class="fa-solid fa-map-pin mr-1"></i>姫路市夢前町塩田114-2</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">火</span>
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">金</span>
+                        <span class="text-xs text-primary font-bold pt-1 ml-1">16:00〜 / 17:00〜</span>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=兵庫県姫路市夢前町塩田114-2" target="_blank" class="text-primary text-sm font-bold hover:underline"><i class="fa-solid fa-location-arrow mr-1"></i>地図を見る</a>
+                </div>
+
+                <!-- 花田教室 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition border-l-4 border-primary">
+                    <h4 class="font-bold text-lg mb-2">花田教室</h4>
+                    <p class="text-xs text-gray-500 mb-3"><i class="fa-solid fa-map-pin mr-1"></i>姫路市花田町加納原田888-1<br>（東市民センター内）</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">水</span>
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">金</span>
+                        <span class="text-xs text-primary font-bold pt-1 ml-1">16:00〜 / 17:00〜</span>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=兵庫県姫路市花田町加納原田888-1" target="_blank" class="text-primary text-sm font-bold hover:underline"><i class="fa-solid fa-location-arrow mr-1"></i>地図を見る</a>
+                </div>
+
+                 <!-- 北条教室 -->
+                 <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition border-l-4 border-primary">
+                    <h4 class="font-bold text-lg mb-2">北条教室</h4>
+                    <p class="text-xs text-gray-500 mb-3"><i class="fa-solid fa-map-pin mr-1"></i>姫路市北条1-98<br>（姫路労働会館内）</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">月</span>
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">水</span>
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">木</span>
+                        <span class="text-xs text-primary font-bold pt-1 ml-1">16:00〜 / 17:00〜</span>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=兵庫県姫路市北条1-98" target="_blank" class="text-primary text-sm font-bold hover:underline"><i class="fa-solid fa-location-arrow mr-1"></i>地図を見る</a>
+                </div>
+
+                <!-- 荒川本部教室 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition border-l-4 border-primary">
+                    <h4 class="font-bold text-lg mb-2">荒川本部教室</h4>
+                    <p class="text-xs text-gray-500 mb-3"><i class="fa-solid fa-map-pin mr-1"></i>姫路市岡田333-3<br>（そろばんカフェ併設）</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">月</span>
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">水</span>
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">木</span>
+                        <span class="text-xs text-primary font-bold pt-1 ml-1">16:00〜 / 17:00〜</span>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                         <span class="bg-secondary/20 text-secondary text-xs px-2 py-1 rounded">土</span>
+                         <span class="text-xs text-primary font-bold pt-1 ml-1">10:00〜 / 11:00〜</span>
+                    </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=兵庫県姫路市岡田333-3" target="_blank" class="text-primary text-sm font-bold hover:underline"><i class="fa-solid fa-location-arrow mr-1"></i>地図を見る</a>
+                </div>
+
+                <!-- 二階町教室 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition border-l-4 border-primary">
+                    <h4 class="font-bold text-lg mb-2">二階町教室</h4>
+                    <p class="text-xs text-gray-500 mb-3"><i class="fa-solid fa-map-pin mr-1"></i>姫路市二階町99-1</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">月</span>
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">木</span>
+                        <span class="text-xs text-primary font-bold pt-1 ml-1">15:30〜 / 16:30〜 / 17:30〜</span>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-secondary/20 text-secondary text-xs px-2 py-1 rounded">土</span>
+                        <span class="text-xs text-primary font-bold pt-1 ml-1">10:00〜 / 11:00〜</span>
+                   </div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=兵庫県姫路市二階町99-1" target="_blank" class="text-primary text-sm font-bold hover:underline"><i class="fa-solid fa-location-arrow mr-1"></i>地図を見る</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section id="contact" class="py-20 hero-bg text-center relative">
+        <div class="max-w-3xl mx-auto px-4 bg-white/95 backdrop-blur-md p-8 md:p-12 rounded-3xl shadow-2xl border border-white">
+            <h2 class="text-2xl md:text-4xl font-bold mb-4 text-display">「できた！」の数だけ、<br>子どもは伸びる。</h2>
+            <p class="text-gray-600 mb-8">
+                そろばんを通じて手に入れた「自信」と「集中力」は、<br class="hidden md:inline">お子さまの一生の財産になります。<br>
+                席数には限りがありますので、お早めにお申し込みください。
+            </p>
+            
+            <a href="https://forms.gle/9g4vqH3Quj4TLxc19" target="_blank" class="btn-shine bg-secondary hover:bg-yellow-500 text-white text-xl md:text-2xl font-bold py-5 px-10 rounded-full shadow-lg transition transform hover:-translate-y-1 block w-full md:w-auto mb-4">
+                今すぐ無料体験会に申し込む
+                <span class="block text-sm font-normal mt-1 opacity-90">お近くの教室をご案内します</span>
+            </a>
+
+            <div class="flex flex-col md:flex-row justify-center gap-4 mt-6 text-sm font-bold">
+                <a href="#" class="flex items-center justify-center gap-2 text-[#06C755] bg-[#06C755]/10 px-4 py-3 rounded-lg hover:bg-[#06C755]/20 transition">
+                    <i class="fa-brands fa-line text-xl"></i> LINEでのお問い合わせ
+                </a>
+                <a href="tel:0000000000" class="flex items-center justify-center gap-2 text-gray-600 bg-gray-100 px-4 py-3 rounded-lg hover:bg-gray-200 transition">
+                    <i class="fa-solid fa-phone"></i> 電話で質問する
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-8 text-center text-sm">
+        <p class="mb-2 font-bold tracking-wider">楽珠そろばん教室</p>
+        <p class="opacity-70">&copy; 姫路楽珠そろばん教室 All Rights Reserved.</p>
+    </footer>
+
+    <!-- Mobile Fixed Bottom CTA -->
+    <div class="fixed bottom-0 left-0 w-full bg-white border-t p-3 md:hidden z-50 flex items-center justify-between shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
+        <div class="text-xs font-bold text-primary pl-2">
+            まずは体験！<br>
+            <span class="text-[10px] text-gray-500 font-normal">姫路エリア受付中</span>
+        </div>
+        <a href="https://forms.gle/9g4vqH3Quj4TLxc19" target="_blank" class="bg-secondary text-white font-bold py-3 px-6 rounded-full shadow-md text-sm">
+            無料体験へ申し込む <i class="fa-solid fa-chevron-right ml-1"></i>
+        </a>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        function toggleAccordion(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('.fa-chevron-down');
+            
+            // Toggle Content
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+                content.classList.remove('active');
+                icon.style.transform = 'rotate(0deg)';
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+                content.classList.add('active');
+                icon.style.transform = 'rotate(180deg)';
+            }
+        }
+    </script>
+</body>
+</html>
